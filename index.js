@@ -31,12 +31,12 @@ if (token) {
 controller.hears('Test', ['mention'], function (bot, message) {
 	  var self = bot.top, $scope = bot, nil = bot.nil, $breaker = bot.breaker, $slice = bot.slice, session = nil, ws = nil;
 
-	 /* bot.add_stubs(['$require', '$login', '$[]', '$worksheets', '$spreadsheet_by_key', '$[]=', '$save', '$reload', '$puts', '$i']);
+	  bot.add_stubs(['$require', '$login', '$[]', '$worksheets', '$spreadsheet_by_key', '$[]=', '$save', '$reload', '$puts', '$i']);
 	  self.$require("rubygems");
 	  self.$require("google_spreadsheet");
 	  session = $scope.get('GoogleSpreadsheet').$login("vjqatesting@gmail", "Test12345");
 	  ws = session.$spreadsheet_by_key("1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew").$worksheets()['$[]'](0);
-	  ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
+	 /* ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
 	  ws.$save();
 	  ws.$reload();
 	  return self.$puts(ws['$[]'](self.$i(), 1));
