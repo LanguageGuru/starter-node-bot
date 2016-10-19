@@ -28,10 +28,10 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-controller.hears('Test', ['mention'], function (bot, message) {
-	  var self = bot.top, $scope = bot, nil = bot.nil, $breaker = bot.breaker, $slice = bot.slice, session = nil, ws = nil;
+controller.hears('Test', ['mention'], function (Opal, message) {
+	  var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, session = nil, ws = nil;
 
-	  bot.add_stubs(['$require', '$login', '$[]', '$worksheets', '$spreadsheet_by_key', '$[]=', '$save', '$reload', '$puts', '$i']);
+	  Opal.add_stubs(['$require', '$login', '$[]', '$worksheets', '$spreadsheet_by_key', '$[]=', '$save', '$reload', '$puts', '$i']);
 	 // self.$require("rubygems");
 	 // self.$require("google_spreadsheet");
 	 // session = $scope.get('GoogleSpreadsheet').$login("vjqatesting@gmail", "Test12345");
@@ -41,7 +41,7 @@ controller.hears('Test', ['mention'], function (bot, message) {
 	//  ws.$reload();
 	//  return self.$puts(ws['$[]'](self.$i(), 1));
 	  
-	  bot.reply(message, "TEST EXECUTED")
+	  Opal.reply(message, "TEST EXECUTED")
 	})
 
 controller.on('bot_channel_join', function (bot, message) {
