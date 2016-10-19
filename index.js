@@ -35,11 +35,11 @@ controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
 })
 controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
-  bot.reply(message, 'HelloEDIT2.')
+  bot.reply(message, 'Hello.')
   bot.reply(message, 'It\'s nice to talk to you directly.')
 })
 
-controller.hears(['How are you', 'Hows things'], ['direct_message'], function (bot, message) {
+controller.hears(['How are you', 'How r u'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Good Thanks!')
 })
 
