@@ -28,6 +28,7 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
+controller.hears('Test', ['mention'], function (bot, message) {
 (function(Opal) {
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, session = nil, ws = nil;
 
@@ -41,7 +42,7 @@ if (token) {
   ws.$reload();
   return self.$puts(ws['$[]'](self.$i(), 1));
 })(Opal);
-
+})
 
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
