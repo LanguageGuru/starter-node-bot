@@ -44,10 +44,11 @@ controller.hears(['How are you', 'How r u'], ['direct_message'], function (bot, 
   bot.reply(message, 'Good Thanks!')
 })
 
+/*
 controller.hears('.*', ['mention'], function (bot, message) {
   bot.reply(message, 'You really do care about me. :heart:')
 })
-
+*/
 
 controller.hears('Translate', ['mention'], function (bot, message) {
   bot.reply(message, 'What would you like me to translate?')
