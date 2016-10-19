@@ -32,7 +32,7 @@ controller.on('bot_channel_join', function (bot, message) {
 })
 
 controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
-  bot.reply(message, 'Hello.')
+  bot.reply(message, 'HelloEDIT1.')
 })
 
 controller.hears(['How are you', 'Hows things'], ['direct_mention'], function (bot, message) {
@@ -40,7 +40,7 @@ controller.hears(['How are you', 'Hows things'], ['direct_mention'], function (b
 })
 
 controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
-  bot.reply(message, 'Hello.')
+  bot.reply(message, 'HelloEDIT2.')
   bot.reply(message, 'It\'s nice to talk to you directly.')
 })
 
