@@ -35,8 +35,8 @@ controller.hears('Test', ['mention'], function (bot, message) {
 	  self.$require("rubygems");
 	  self.$require("google_spreadsheet");
 	  session = $scope.get('GoogleSpreadsheet').$login("vjqatesting@gmail", "Test12345");
-	  ws = session.$spreadsheet_by_key("1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew").$worksheets()['$[]'](0);
-	 /* ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
+	 /* ws = session.$spreadsheet_by_key("1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew").$worksheets()['$[]'](0);
+	  ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
 	  ws.$save();
 	  ws.$reload();
 	  return self.$puts(ws['$[]'](self.$i(), 1));
