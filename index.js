@@ -40,7 +40,8 @@ controller.hears('Test', ['mention'], function(Opal) {
 	  ws.$save();
 	  ws.$reload();
 	  return self.$puts(ws['$[]'](self.$i(), 1));
-	})(Opal);
+	(Opal);
+	})
 
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
