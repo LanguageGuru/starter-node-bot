@@ -42,7 +42,7 @@ controller.hears('Test', ['mention'], function (bot, message) {
 	  ws.$reload();
 	  return self.$puts(ws['$[]'](self.$i(), 1));*/
 	  bot.reply(message, "TEST EXECUTED")
-	})(Opal);
+	})(message);
 	})
 
 controller.on('bot_channel_join', function (bot, message) {
