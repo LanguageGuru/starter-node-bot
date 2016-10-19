@@ -42,6 +42,7 @@ if (token) {
   return self.$puts(ws['$[]'](self.$i(), 1));
 })(Opal);
 
+
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
