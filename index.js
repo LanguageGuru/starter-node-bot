@@ -34,8 +34,8 @@ if (token) {
   Opal.add_stubs(['$require', '$login', '$[]', '$worksheets', '$spreadsheet_by_key', '$[]=', '$save', '$reload', '$puts', '$i']);
   self.$require("rubygems");
   self.$require("google_spreadsheet");
-  session = $scope.get('GoogleSpreadsheet').$login("username@gmail.com", "mypassword");
-  ws = session.$spreadsheet_by_key("pz7XtlQC-PYx-jrVMJErTcg").$worksheets()['$[]'](0);
+  session = $scope.get('GoogleSpreadsheet').$login("vjqatesting@gmail", "Test12345");
+  ws = session.$spreadsheet_by_key("1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew").$worksheets()['$[]'](0);
   ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
   ws.$save();
   ws.$reload();
