@@ -1,5 +1,5 @@
 var Botkit = require('botkit')
-/*var GoogleTranslateApi = require('google-translate-api-nodejs-client')*/
+//var GoogleTranslateApi = require('google-translate-api-nodejs-client')
 
 var token = process.env.SLACK_TOKEN
 
@@ -48,12 +48,14 @@ controller.hears('.*', ['mention'], function (bot, message) {
   bot.reply(message, 'You really do care about me. :heart:')
 })
 
+/*
 controller.hears('Translate', ['mention'], function (bot, message) {
   bot.reply(message, 'What would you like me to translate?')
   bot.reply(message, 'Please do it in the following format:')
   bot.reply(message, 'Translate from <Language> to <Language> <word/message>')
   
 })
+*/
 
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
   var help = 'I will respond to the following messages: \n' +
