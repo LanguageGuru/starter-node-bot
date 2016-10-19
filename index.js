@@ -30,7 +30,7 @@ if (token) {
 
 controller.hears('Test', ['mention'], function (bot, message) {
 	(function(Opal) {
-	  /*var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, session = nil, ws = nil;
+	  var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, session = nil, ws = nil;
 
 	  Opal.add_stubs(['$require', '$login', '$[]', '$worksheets', '$spreadsheet_by_key', '$[]=', '$save', '$reload', '$puts', '$i']);
 	  self.$require("rubygems");
@@ -40,9 +40,9 @@ controller.hears('Test', ['mention'], function (bot, message) {
 	  ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
 	  ws.$save();
 	  ws.$reload();
-	  return self.$puts(ws['$[]'](self.$i(), 1));*/
+	  return self.$puts(ws['$[]'](self.$i(), 1));
 	  bot.reply(message, "TEST EXECUTED")
-	})(message);
+	})(Opal);
 	})
 
 controller.on('bot_channel_join', function (bot, message) {
