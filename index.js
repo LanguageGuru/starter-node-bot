@@ -28,6 +28,20 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
+(function(Opal) {
+  var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, session = nil, ws = nil;
+
+  Opal.add_stubs(['$require', '$login', '$[]', '$worksheets', '$spreadsheet_by_key', '$[]=', '$save', '$reload', '$puts', '$i']);
+  self.$require("rubygems");
+  self.$require("google_spreadsheet");
+  session = $scope.get('GoogleSpreadsheet').$login("username@gmail.com", "mypassword");
+  ws = session.$spreadsheet_by_key("pz7XtlQC-PYx-jrVMJErTcg").$worksheets()['$[]'](0);
+  ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
+  ws.$save();
+  ws.$reload();
+  return self.$puts(ws['$[]'](self.$i(), 1));
+})(Opal);
+
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
