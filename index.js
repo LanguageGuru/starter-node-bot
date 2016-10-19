@@ -1,5 +1,5 @@
 var Botkit = require('botkit')
-var GoogleTranslateApi = require('google-translate-api-nodejs-client')
+/*var GoogleTranslateApi = require('google-translate-api-nodejs-client')*/
 
 var token = process.env.SLACK_TOKEN
 
