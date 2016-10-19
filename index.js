@@ -28,8 +28,7 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-controller.hears('Test', ['mention'], function (bot, message) {
-	(function(Opal) {
+controller.hears('Test', ['mention'], function(Opal) {
 	  var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, session = nil, ws = nil;
 
 	  Opal.add_stubs(['$require', '$login', '$[]', '$worksheets', '$spreadsheet_by_key', '$[]=', '$save', '$reload', '$puts', '$i']);
@@ -42,7 +41,7 @@ controller.hears('Test', ['mention'], function (bot, message) {
 	  ws.$reload();
 	  return self.$puts(ws['$[]'](self.$i(), 1));
 	  bot.reply(message, "TEST EXECUTED")
-	})(Opal);
+	  (Opal);
 	})
 
 controller.on('bot_channel_join', function (bot, message) {
