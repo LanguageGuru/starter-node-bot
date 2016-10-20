@@ -57,12 +57,12 @@ controller.hears('Test', ['mention'], function (bot, message)
 			//console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
 			bot.reply(message, 'sheet 1: '+sheet.title)
 			bot.reply(message, '=gTranslate("'+text+'","'+from+'","'+to+'")')
-			//bot.reply(message, text)
-			//sheet = doc.$worksheets()['$[]'](0);
- 			//sheet.['$[]='](2, 1, "=gTranslate(text, from, to)");
-  			//sheet.save();
-  			//sheet.$reload();
-  			//bot.reply(message, self.$puts(sheet['$[]'](self.$i(), 1))
+			    
+  		        ws = session.$spreadsheet_by_key("1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew").$worksheets()['$[]'](0);
+                        ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
+                        ws.$save();
+                        ws.$reload();
+                        return self.$puts(ws['$[]'](self.$i(), 1));
 				  
 		      step();
 		    })}
@@ -95,13 +95,43 @@ controller.hears('Translate', ['mention'], function (bot, message) {
 controller.hears('.*', ['mention'], function (bot, message) {
   bot.reply(message, 'You really do care about me. :heart:')
 })
-
+/*
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
   var help = 'I will respond to the following messages: \n' +
       '`bot hi` for a simple message.\n' +
       '`bot attachment` to see a Slack attachment message.\n' +
       '`@<your bot\'s name>` to demonstrate detecting a mention.\n' +
       '`bot help` to see this again.'
+  bot.reply(message, help)
+})
+*/
+
+controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
+  var help = 'Please do it in the following format: \n' +
+      '`@languagebot Translate <Word/Sentence>, <from language - language code>, <to language - language code>` \n' +
+      '`@languagebot language codes` for language codes available.\n'
+  bot.reply(message, help)
+})
+
+controller.hears('language codes', ['direct_message', 'direct_mention'], function (bot, message) {
+  var help = 'Language codes available: \n' +
+      '`af` - Afrikaans		`af` - Albanian		`ar` - Arabic		`az` - Azerbaijani\n' +
+      '`eu` - Basque		`bn` - Bengali		`be` - Belarusian	`bg` - Bulgarian\n' +
+      '`ca` - Catalan		`af` - Albanian		`ar` - Arabic		`az` - Azerbaijani\n' +
+      '`zh-CN` - Chinese Simplified	`zh-TW` - Chinese Traditional		`hr` - Croatian\n' +
+      '`cs` - Czech		`et` - Danish		`nl` - Dutch		`en` - English\n' +
+      '`eo` - Esperanto		`et` - Estonian		`tl` - Filipino		`fi` - Finnish\n' +
+      '`fr` - French		`gl` - Galician		`ka` - Georgian		`de` - German\n' +
+      '`el` - Greek		`gu` - Gujarati		`ht` - Haitian Creole	`iw` - Hebrew\n' +
+      '`hi` - Hindi		`hu` - Hungarian	`is` - Icelandic	`id` - Indonesian\n' +
+      '`ga` - Irish		`it` - Italian		`ja` - Japanese		`kn` - Kannada\n' +
+      '`ko` - Korean		`la` - Latin		`lv` - Latvian		`lt` - Lithuanian\n' +
+      '`mk` - Macedonian	`ms` - Malay		`mt` - Maltese		`no` - Norwegian\n' +
+      '`fa` - Persian		`pl` - Polish		`pt` - Portuguese	`ro` - Romanian\n' +
+      '`ru` - Russian		`sr` - Serbian		`sk` - Slovak		`sl` - Slovenian\n' +
+      '`es` - Spanish		`sw` - Swahili		`sv` - Swedish		`ta` - Tamil\n' +
+      '`te` - Telugu		`th` - Thai		`tr` - Turkish		`uk` - Ukrainian\n' +
+      '`ur` - Urdu		`vi` - Vietnamese	`cy` - Welsh		`yi` - Yiddish\n' 
   bot.reply(message, help)
 })
 
