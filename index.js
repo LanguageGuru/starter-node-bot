@@ -114,8 +114,8 @@ controller.hears('help', ['direct_message', 'direct_mention'], function (bot, me
 })
 
 controller.hears('language codes', ['direct_message', 'direct_mention'], function (bot, message) {
-  var help = 'Language codes available: \n' +
-      '`af` - Afrikaans		`af` - Albanian		`ar` - Arabic		`az` - Azerbaijani\n' +
+  var languagecodes = 'Language codes available: \n' +
+      '`af` - Afrikaans		`sq` - Albanian		`ar` - Arabic		`az` - Azerbaijani\n' +
       '`eu` - Basque		`bn` - Bengali		`be` - Belarusian	`bg` - Bulgarian\n' +
       '`ca` - Catalan		`af` - Albanian		`ar` - Arabic		`az` - Azerbaijani\n' +
       '`zh-CN` - Chinese Simplified	`zh-TW` - Chinese Traditional		`hr` - Croatian\n' +
@@ -132,7 +132,7 @@ controller.hears('language codes', ['direct_message', 'direct_mention'], functio
       '`es` - Spanish		`sw` - Swahili		`sv` - Swedish		`ta` - Tamil\n' +
       '`te` - Telugu		`th` - Thai		`tr` - Turkish		`uk` - Ukrainian\n' +
       '`ur` - Urdu		`vi` - Vietnamese	`cy` - Welsh		`yi` - Yiddish\n' 
-  bot.reply(message, help)
+  bot.reply(message, languagecodes)
 })
 
 controller.hears(['attachment'], ['direct_message', 'direct_mention'], function (bot, message) {
