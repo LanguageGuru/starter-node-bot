@@ -45,7 +45,7 @@ controller.hears('Test', ['mention'], function (bot, message)
     }
 
 			doc.useServiceAccountAuth(creds, step);
-				console.log("** starting async login: ", step);
+				console.log("starting async login");
 			     },
 		  function getInfoAndWorksheets(step) {
 			  console.log("step 2 of async login");
@@ -58,7 +58,7 @@ controller.hears('Test', ['mention'], function (bot, message)
 		   ]);
 
 			bot.startConversation(message, function(err,convo) {
-				convo.say("FUNCTION EXECUTED! Please Wait");
+				convo.say("FUNCTION EXECUTED!");
 			 setTimeout(function () {
                            convo.say("timeout here");
 			 }, 3000);
