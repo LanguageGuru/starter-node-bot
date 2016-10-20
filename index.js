@@ -45,14 +45,14 @@ controller.hears('Test', ['mention'], function (bot, message)
     }
 
 			doc.useServiceAccountAuth(creds, step);
-				console.log("starting async login");
+				//console.log("starting async login");
 			     },
 		  function getInfoAndWorksheets(step) {
-			  console.log("step 2 of async login");
+			  //console.log("step 2 of async login");
 		    doc.getInfo(function(err, info) {
-		      bot.say('Loaded doc: '+info.title+' by '+info.author.email);
+		      console.log('Loaded doc: '+info.title+' by '+info.author.email);
 		      sheet = info.worksheets[0];
-		      bot.say('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
+		      console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
 		      step();
 		    })}
 		   ]);
