@@ -53,11 +53,11 @@ controller.hears('Test', ['mention'], function (bot, message)
 		      sheet = info.worksheets[0];
 		      //console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
 			bot.reply(message, 'sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount)
-//		 	ws = doc.$worksheets()['$[]'](0);
-// 			ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
-//  			ws.$save();
-//  			ws.$reload();
-//  			return self.$puts(ws['$[]'](self.$i(), 1));    
+		 	//ws = doc.$worksheets()['$[]'](0);
+ 			sheet.['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
+  			sheet.$save();
+  			sheet.$reload();
+  			bot.reply(message, self.$puts(sheet['$[]'](self.$i(), 1))
 		      step();
 		    })}
 		   ]);
