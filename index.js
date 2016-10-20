@@ -65,7 +65,7 @@ controller.hears('Translate', ['direct_mention'], function (bot, message)
                         //return self.$puts(ws['$[]'](self.$i(), 1));		
 			var ss=SpreadsheetApp.getActiveSpreadsheet();
 			var s=ss.getActiveSheet()
-			var value =s.getDataRange().getValues().map(function (x) {return x[0];});
+			var value=s.getDataRange().getValues();
   			//sheet2.appendRow([translate]);
 			bot.reply(message, value)	  
 		      step();
