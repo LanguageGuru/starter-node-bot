@@ -89,7 +89,7 @@ controller.hears(['How are you', 'How r u'], ['direct_message'], function (bot, 
 controller.hears('.*', ['mention'], function (bot, message) {
   bot.reply(message, 'You really do care about me. :heart:')
 })
-/*
+
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
   var help = 'I will respond to the following messages: \n' +
       '`bot hi` for a simple message.\n' +
@@ -98,8 +98,8 @@ controller.hears('help', ['direct_message', 'direct_mention'], function (bot, me
       '`bot help` to see this again.'
   bot.reply(message, help)
 })
-*/
 
+/*
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
   var help = 'Please do it in the following format: \n' +
       '`@languagebot Translate <Word/Sentence>, <from language - language code>, <to language - language code>` \n' +
@@ -128,7 +128,7 @@ controller.hears('language codes', ['direct_message', 'direct_mention'], functio
       '`ur` - Urdu		`vi` - Vietnamese	`cy` - Welsh		`yi` - Yiddish\n' 
   bot.reply(message, languagecodes)
 })
-
+*/
 controller.hears(['attachment'], ['direct_message', 'direct_mention'], function (bot, message) {
   var text = 'Beep Beep Boop is a ridiculously simple hosting platform for your Slackbots.'
   var attachments = [{
