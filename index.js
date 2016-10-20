@@ -59,7 +59,7 @@ controller.hears('Translate', ['mention'], function (bot, message)
 			bot.reply(message, '=gTranslate("'+text+'","'+from+'","'+to+'")')
 			    
   		        //ws = session.$spreadsheet_by_key("1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew").$worksheets()['$[]'](0);
-			console.log(sheet);    
+			//console.log(sheet);    
                         //ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
                         //ws.$save();
                         //ws.$reload();
