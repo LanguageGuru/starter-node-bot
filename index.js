@@ -102,19 +102,19 @@ controller.hears('help', ['direct_message', 'direct_mention'], function (bot, me
 })
 */
 
-controller.hears(['This is a test'], ['direct_message'], function (bot, message) {
+controller.hears(['This is a test'], ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'Esto es una prueba')
 })
 
-controller.hears(['How is the deployment looking?'], ['mention'], function (bot, message) {
+controller.hears(['How is the deployment looking?'], ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'どのように展開が見ていますか？')
 })
 
-controller.hears(['"Anong oras na?"'], ['direct_message'], function (bot, message) {
+controller.hears(['"Anong oras na?"'], ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'che ore sono?')
 })
 
-controller.hears(['"Merci pour votre temps!"'], ['direct_message'], function (bot, message) {
+controller.hears(['"Merci pour votre temps!"'], ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'Thank you for your time!')
 })
 
