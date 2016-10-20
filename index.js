@@ -57,10 +57,10 @@ controller.hears('Test', ['mention'], function (bot, message)
 		    })}
 		   ]);
 
-			bot.startConversation(message, function() {
-				bot.say("FUNCTION EXECUTED! Please Wait");
+			bot.startConversation(message, function(err,convo) {
+				convo.say("FUNCTION EXECUTED! Please Wait");
 			 setTimeout(function () {
-                           bot.say("timeout here");
+                           convo.say("timeout here");
 			 }, 3000);
                        })
 		})
