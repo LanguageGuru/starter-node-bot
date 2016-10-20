@@ -58,16 +58,14 @@ controller.hears('Translate', ['direct_mention'], function (bot, message)
 			bot.reply(message, 'sheet 1: '+sheet.title)
 			bot.reply(message, translate)
 			    
-  		        //ws = session.$spreadsheet_by_key("1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew").$worksheets()['$[]'](0);
+  		        ws = session.getActiveSheet('Translator')['$[]'](0);
                         //ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
                         //ws.$save();
                         //ws.$reload();
                         //return self.$puts(ws['$[]'](self.$i(), 1));		
-			var ss=SpreadsheetApp.getActiveSpreadsheet();
-			//var s=ss.getActiveSheet();
 			//var vals=s.getValues();
   			//sheet2.appendRow([translate]);
-			//bot.reply(message, vals)	  
+			bot.reply(message, ws)	  
 		      step();
 		    })}
 		   ]);
