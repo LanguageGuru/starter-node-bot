@@ -99,7 +99,7 @@ controller.hears('help', ['direct_message', 'direct_mention'], function (bot, me
   bot.reply(message, help)
 })
 
-/*
+
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
   var help = 'Please do it in the following format: \n' +
       '`@languagebot Translate <Word/Sentence>, <from language - language code>, <to language - language code>` \n' +
@@ -107,6 +107,7 @@ controller.hears('help', ['direct_message', 'direct_mention'], function (bot, me
   bot.reply(message, help)
 })
 
+/*
 controller.hears('language codes', ['direct_message', 'direct_mention'], function (bot, message) {
   var languagecodes = 'Language codes available: \n' +
       '`af` - Afrikaans		`sq` - Albanian		`ar` - Arabic		`az` - Azerbaijani\n' +
