@@ -40,8 +40,8 @@ async.series([
     // see notes below for authentication instructions! 
     var creds = require('./google-generated-creds.json');
     }	
+	]);
 	bot.reply(message, "FUNCTION EXECUTED!")
-	])
 })
 
 controller.on('bot_channel_join', function (bot, message) {
