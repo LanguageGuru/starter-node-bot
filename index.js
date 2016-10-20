@@ -28,7 +28,7 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-controller.hears('Translate', ['mention'], function (bot, message) 
+controller.hears('Translate', ['direct_mention'], function (bot, message) 
 		{
 		   var GoogleSpreadsheet = require('google-spreadsheet');
 		   var async = require('async');	
