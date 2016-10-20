@@ -36,7 +36,7 @@ controller.hears('Test', ['mention'], function (bot, message)
 		   var sheet;
 		   var from = "en";
 		   var to = "es";
-		   var text = "this is a test";
+		   var text = "This is a test";
 			
 		   async.series
 		   ([
@@ -56,7 +56,7 @@ controller.hears('Test', ['mention'], function (bot, message)
 		      sheet = info.worksheets[0];
 		      //console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
 			bot.reply(message, 'sheet 1: '+sheet.title)
-
+			bot.reply(message, '=gTranslate('+text+','+from+','+to+')')
 			//sheet = doc.$worksheets()['$[]'](0);
  			//sheet.['$[]='](2, 1, "=gTranslate(text, from, to)");
   			sheet.save();
