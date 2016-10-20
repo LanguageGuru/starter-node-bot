@@ -38,9 +38,12 @@ controller.hears('Test', ['mention'], function (bot, message)
 		   async.series
 		   ([
 		        function setAuth(step) {
-		     		var creds = require('./google-generated-creds.json');
+		     		 var creds_json = {
+      client_email: 'vjqatesting@google.com',
+      //private_key: 'your long private key stuff here'
+    }
 
-			doc.useServiceAccountAuth(creds, step);
+			doc.useServiceAccountAuth(creds_json, step);
 			     },
 		  function getInfoAndWorksheets(step) {
 		    doc.getInfo(function(err, info) {
