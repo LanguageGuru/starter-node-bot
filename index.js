@@ -43,8 +43,9 @@ controller.hears('Test', ['mention'], function (bot, message)
       client_email: 'vjqatesting@gmail.com',
       private_key: 'AIzaSyAHnC2J-ChrpQ7iCDEgktI1xozaZ6V74SE'
     }
-console.log("starting async login");
-			doc.useServiceAccountAuth(creds, step);
+
+			var val = doc.useServiceAccountAuth(creds, step);
+				console.log("** starting async login: ", val);
 			     },
 		  function getInfoAndWorksheets(step) {
 			  console.log("step 2 of async login");
