@@ -64,9 +64,10 @@ controller.hears('Translate', ['direct_mention'], function (bot, message)
                         //ws.$save();
                         //ws.$reload();
                         //return self.$puts(ws['$[]'](self.$i(), 1));
-			function addToSpreadsheet() {
+			function addToSpreadsheet() {				
 			  var sheet2 = SpreadsheetApp.getActiveSheet();
   			  sheet.appendRow([translate]);
+				bot.reply(message, "addtospreadsheet completed")
 				}	  
 		      step();
 		    })}
