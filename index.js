@@ -59,14 +59,13 @@ controller.hears('Translate', ['direct_mention'], function (bot, message)
 			bot.reply(message, translate)
 			    
   		        //ws = session.$spreadsheet_by_key("1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew").$worksheets()['$[]'](0);
-			//console.log(sheet);    
                         //ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
                         //ws.$save();
                         //ws.$reload();
                         //return self.$puts(ws['$[]'](self.$i(), 1));				
-			var sheet2 = SpreadsheetApp.getActiveSheet();
-  			sheet2.appendRow([translate]);
-			bot.reply(message, "addtospreadsheet completed")	  
+			//var sheet2 = SpreadsheetApp.getActiveSheet();
+  			//sheet2.appendRow([translate]);
+			bot.reply(message, sheet)	  
 		      step();
 		    })}
 		   ]);
