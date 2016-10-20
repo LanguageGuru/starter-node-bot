@@ -63,12 +63,10 @@ controller.hears('Translate', ['direct_mention'], function (bot, message)
                         //ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
                         //ws.$save();
                         //ws.$reload();
-                        //return self.$puts(ws['$[]'](self.$i(), 1));
-			function addToSpreadsheet(step) {				
-			  var sheet2 = SpreadsheetApp.getActiveSheet();
-  			  sheet.appendRow([translate]);
-				bot.reply(message, "addtospreadsheet completed")
-				}	  
+                        //return self.$puts(ws['$[]'](self.$i(), 1));				
+			var sheet2 = SpreadsheetApp.getActiveSheet();
+  			sheet.appendRow([translate]);
+			bot.reply(message, "addtospreadsheet completed")	  
 		      step();
 		    })}
 		   ]);
