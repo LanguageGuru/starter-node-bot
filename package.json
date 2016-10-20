@@ -24,6 +24,7 @@
   "dependencies": {
     "beepboop-botkit": "^1.4.1",
     "google-spreadsheet": "~2.0.0",
+    "async": "~2.1.0",
     "botkit": "~0.2.2"
   }
 }
