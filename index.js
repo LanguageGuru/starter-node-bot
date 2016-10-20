@@ -56,6 +56,7 @@ controller.hears('Test', ['mention'], function (bot, message)
 		      step();
 		    })}
 		   ]);
+			console.log("bot", bot);
 			bot.reply(message, "FUNCTION EXECUTED!")
 		})
 
