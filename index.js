@@ -34,6 +34,12 @@ var async = require('async');
 	
 var doc = new GoogleSpreadsheet('1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew');
 var sheet;
+	
+async.series([
+  function setAuth(step) {
+    // see notes below for authentication instructions! 
+    var creds = require('./google-generated-creds.json');
+    }	
 bot.reply(message, "FUNCTION EXECUTED!")	
 })
 
