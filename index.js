@@ -50,14 +50,18 @@ controller.hears('Test', ['mention'], function (bot, message)
 		  function getInfoAndWorksheets(step) {
 			  console.log("step 2 of async login");
 		    doc.getInfo(function(err, info) {
-		      bot.reply('Loaded doc: '+info.title+' by '+info.author.email);
+		      bot.say('Loaded doc: '+info.title+' by '+info.author.email);
 		      sheet = info.worksheets[0];
-		      bot.reply('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
+		      bot.say('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
 		      step();
 		    })}
 		   ]);
-			console.log("bot", bot);
-			bot.reply(message, "FUNCTION EXECUTED!")
+
+			bot.reply(message, "FUNCTION EXECUTED! Please Wait", function() {
+			 setTimeout(function () {
+                           bot.say("timeout here");
+			 }, 3000);
+                       })
 		})
 
 controller.on('bot_channel_join', function (bot, message) {
