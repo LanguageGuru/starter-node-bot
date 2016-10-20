@@ -52,11 +52,12 @@ controller.hears('Test', ['mention'], function (bot, message)
 		      bot.reply(message, 'Loaded doc: '+info.title+' by '+info.author.email)
 		      sheet = info.worksheets[0];
 		      //console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
-		 	ws = doc.$worksheets()['$[]'](0);
-  			ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
-  			ws.$save();
-  			ws.$reload();
-  			return self.$puts(ws['$[]'](self.$i(), 1));    
+			bot.reply(message, 'sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount)
+//		 	ws = doc.$worksheets()['$[]'](0);
+// 			ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
+//  			ws.$save();
+//  			ws.$reload();
+//  			return self.$puts(ws['$[]'](self.$i(), 1));    
 		      step();
 		    })}
 		   ]);
