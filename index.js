@@ -106,7 +106,7 @@ controller.hears(['This is a test'], ['direct_message'], function (bot, message)
   bot.reply(message, 'Esto es una prueba')
 })
 
-controller.hears(['"How is the deployment looking?"'], ['direct_message'], function (bot, message) {
+controller.hears(['How is the deployment looking?'], ['mention'], function (bot, message) {
   bot.reply(message, 'どのように展開が見ていますか？')
 })
 
