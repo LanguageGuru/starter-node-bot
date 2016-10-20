@@ -28,7 +28,7 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-controller.hears('Test', ['mention'], function (bot, message) 
+controller.hears('Translate', ['mention'], function (bot, message) 
 		{
 		   var GoogleSpreadsheet = require('google-spreadsheet');
 		   var async = require('async');	
@@ -59,6 +59,7 @@ controller.hears('Test', ['mention'], function (bot, message)
 			bot.reply(message, '=gTranslate("'+text+'","'+from+'","'+to+'")')
 			    
   		        //ws = session.$spreadsheet_by_key("1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew").$worksheets()['$[]'](0);
+			console.log(sheet);    
                         //ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
                         //ws.$save();
                         //ws.$reload();
@@ -83,13 +84,6 @@ controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
 
 controller.hears(['How are you', 'How r u'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Good Thanks!')
-})
-
-controller.hears('Translate', ['mention'], function (bot, message) {
-  bot.reply(message, 'What would you like me to translate?')
-  bot.reply(message, 'Please do it in the following format:')
-  bot.reply(message, 'Translate from <Language> to <Language> <word/message>')
-  
 })
 
 controller.hears('.*', ['mention'], function (bot, message) {
