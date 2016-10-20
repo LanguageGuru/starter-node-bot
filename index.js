@@ -45,10 +45,8 @@ controller.hears('Test', ['mention'], function (bot, message)
     }
 
 			doc.useServiceAccountAuth(creds, step);
-				//console.log("starting async login");
 			     },
 		  function getInfoAndWorksheets(step) {
-			  //console.log("step 2 of async login");
 		    doc.getInfo(function(err, info) {
 		      console.log('Loaded doc: '+info.title+' by '+info.author.email);
 		      sheet = info.worksheets[0];
@@ -57,12 +55,12 @@ controller.hears('Test', ['mention'], function (bot, message)
 		    })}
 		   ]);
 
-			bot.startConversation(message, function(err,convo) {
-				convo.say("FUNCTION EXECUTED!");
-			 setTimeout(function () {
-                           convo.say("timeout here");
-			 }, 3000);
-                       })
+//			bot.startConversation(message, function(err,convo) {
+//				convo.say("FUNCTION EXECUTED!");
+//			 setTimeout(function () {
+//                        convo.say("timeout here");
+// 	 		}, 3000);
+//                       })
 		})
 
 controller.on('bot_channel_join', function (bot, message) {
