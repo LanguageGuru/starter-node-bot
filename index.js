@@ -102,7 +102,7 @@ controller.hears('help', ['direct_message', 'direct_mention'], function (bot, me
 })
 */
 
-controller.hears(['"This is a test","en","es")'], ['direct_message'], function (bot, message) {
+controller.hears(['"This is a test")'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Esto es una prueba')
 })
 
