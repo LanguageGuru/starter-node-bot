@@ -103,7 +103,8 @@ controller.hears('help', ['direct_message', 'direct_mention'], function (bot, me
 
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
   var help = 'Please do it in the following format: \n' +
-      '`@languagebot Translate <Word/Sentence>, <from language - language code>, <to language - language code>` \n' +
+      '`@languagebot Translate "<Word/Sentence>", "<from language - language code>", "<to language - language code>"` \n' +
+      'Eg. @languagebot Translate "This is a test", "en", "es" \n' +
       '`@languagebot language codes` for language codes available.\n'
   bot.reply(message, help)
 })
