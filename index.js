@@ -63,11 +63,11 @@ controller.hears('Translate', ['direct_mention'], function (bot, message)
                         //ws.$save();
                         //ws.$reload();
                         //return self.$puts(ws['$[]'](self.$i(), 1));		
-			var ss=SpreadsheetApp.getActiveSpreadsheet();
-			var s=ss.getActiveSheet();
-			var vals=s.getValues();
+			//var ss=SpreadsheetApp.getActiveSpreadsheet();
+			//var s=ss.getActiveSheet();
+			//var vals=s.getValues();
   			//sheet2.appendRow([translate]);
-			bot.reply(message, vals)	  
+			//bot.reply(message, vals)	  
 		      step();
 		    })}
 		   ]);
