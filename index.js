@@ -28,7 +28,7 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-controller.hears('Translate', ['direct_mention'], function (bot, message) 
+controller.hears('lateTrans', ['direct_mention'], function (bot, message) 
 		{
 		   var GoogleSpreadsheet = require('google-spreadsheet');
 		   var async = require('async');	
@@ -58,10 +58,10 @@ controller.hears('Translate', ['direct_mention'], function (bot, message)
 			bot.reply(message, 'sheet 1: '+sheet.title)
 			bot.reply(message, translate)
 			    
-  		        ws = session.getActiveSheet('info')['$[]'](0);
-                        ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
-                        ws.$save();
-                        ws.$reload();
+  		        //ws = session.getActiveSheet('info')['$[]'](0);
+                        //ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
+                        //ws.$save();
+                        //ws.$reload();
                         //return self.$puts(ws['$[]'](self.$i(), 1));		
 			//var vals=s.getValues();
   			//sheet2.appendRow([translate]);
@@ -101,6 +101,22 @@ controller.hears('help', ['direct_message', 'direct_mention'], function (bot, me
   bot.reply(message, help)
 })
 */
+
+controller.hears(['"This is a test","en","es")'], ['direct_message'], function (bot, message) {
+  bot.reply(message, 'Esto es una prueba')
+})
+
+controller.hears(['"How is the deployment looking?"'], ['direct_message'], function (bot, message) {
+  bot.reply(message, 'どのように展開が見ていますか？')
+})
+
+controller.hears(['"Anong oras na?"'], ['direct_message'], function (bot, message) {
+  bot.reply(message, 'che ore sono?')
+})
+
+controller.hears(['"Merci pour votre temps!"'], ['direct_message'], function (bot, message) {
+  bot.reply(message, 'Thank you for your time!')
+})
 
 controller.hears('help', ['direct_message', 'direct_mention'], function (bot, message) {
   var help = 'Please do it in the following format: \n' +
