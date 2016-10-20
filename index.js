@@ -46,6 +46,7 @@ console.log("starting async login");
 			doc.useServiceAccountAuth(creds_json, step);
 			     },
 		  function getInfoAndWorksheets(step) {
+			  console.log("step 2 of async login");
 		    doc.getInfo(function(err, info) {
 		      console.log('Loaded doc: '+info.title+' by '+info.author.email);
 		      sheet = info.worksheets[0];
