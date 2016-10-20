@@ -38,12 +38,13 @@ controller.hears('Test', ['mention'], function (bot, message)
 		   async.series
 		   ([
 		        function setAuth(step) {
+				var creds = './slackhack-5aef253ddb27.json';
 		     		 var creds_json = {
       client_email: 'vjqatesting@gmail.com',
       private_key: 'AIzaSyAHnC2J-ChrpQ7iCDEgktI1xozaZ6V74SE'
     }
 console.log("starting async login");
-			doc.useServiceAccountAuth(creds_json, step);
+			doc.useServiceAccountAuth(creds, step);
 			     },
 		  function getInfoAndWorksheets(step) {
 			  console.log("step 2 of async login");
