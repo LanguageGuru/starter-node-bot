@@ -58,7 +58,7 @@ controller.hears('Translate', ['direct_mention'], function (bot, message)
 			bot.reply(message, 'sheet 1: '+sheet.title)
 			bot.reply(message, translate)
 			    
-  		        ws = session.getActiveSheet('Translator')['$[]'](0);
+  		        ws = session.getActiveSheet('LanguageSheet')['$[]'](0);
                         //ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
                         //ws.$save();
                         //ws.$reload();
