@@ -40,7 +40,7 @@ controller.hears('Test', ['mention'], function (bot, message)
 		        function setAuth(step) {
 		     		 var creds_json = {
       client_email: 'vjqatesting@google.com',
-      //private_key: 'your long private key stuff here'
+      private_key: 'AIzaSyAHnC2J-ChrpQ7iCDEgktI1xozaZ6V74SE'
     }
 console.log("starting async login");
 			doc.useServiceAccountAuth(creds_json, step);
