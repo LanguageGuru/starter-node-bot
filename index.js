@@ -48,21 +48,18 @@ controller.hears('Test', ['mention'], function (bot, message)
 			     },
 		  function getInfoAndWorksheets(step) {
 		    doc.getInfo(function(err, info) {
-		      console.log('Loaded doc: '+info.title+' by '+info.author.email);
-			    bot.reply(message, 'Loaded doc: '+info.title+' by '+info.author.email)
+		      //console.log('Loaded doc: '+info.title+' by '+info.author.email);
+		      bot.reply(message, 'Loaded doc: '+info.title+' by '+info.author.email)
 		      sheet = info.worksheets[0];
-		      console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
-			    bot.reply(message, '+sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount)
+		      //console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
+		 	ws = session.doc.$worksheets()['$[]'](0);
+  			ws['$[]='](2, 1, "=gTranslate(\"this is a test\", \"en\", \"es\")");
+  			ws.$save();
+  			ws.$reload();
+  			return self.$puts(ws['$[]'](self.$i(), 1));    
 		      step();
 		    })}
 		   ]);
-
-//			bot.startConversation(message, function(err,convo) {
-//				convo.say("FUNCTION EXECUTED!");
-//			 setTimeout(function () {
-//                        convo.say("timeout here");
-// 	 		}, 3000);
-//                       })
 		})
 
 controller.on('bot_channel_join', function (bot, message) {
