@@ -59,8 +59,8 @@ controller.hears('Test', ['mention'], function (bot, message)
 
 			//sheet = doc.$worksheets()['$[]'](0);
  			//sheet.['$[]='](2, 1, "=gTranslate(text, from, to)");
-  			sheet.$save();
-  			sheet.$reload();
+  			sheet.save();
+  			//sheet.$reload();
   			//bot.reply(message, self.$puts(sheet['$[]'](self.$i(), 1))
 				  
 		      step();
