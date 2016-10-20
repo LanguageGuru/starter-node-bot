@@ -64,10 +64,10 @@ controller.hears('Translate', ['mention'], function (bot, message)
                         //ws.$save();
                         //ws.$reload();
                         //return self.$puts(ws['$[]'](self.$i(), 1));
-			//function addProduct() {
-			 // var sheet = SpreadsheetApp.getActiveSheet();
-  			  //sheet.appendRow(['Cotton Sweatshirt XL', 'css004']);
-			//	}	  
+			function addToSpreadsheet() {
+			  var sheet2 = SpreadsheetApp.getActiveSheet();
+  			  sheet.appendRow([translate]);
+				}	  
 		      step();
 		    })}
 		   ]);
@@ -76,10 +76,10 @@ controller.hears('Translate', ['mention'], function (bot, message)
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
-
+/*
 controller.hears(['hello', 'hi'], ['direct_mention'], function (bot, message) {
   bot.reply(message, 'Hello.')
-})
+})*/
 controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hello.')
   bot.reply(message, 'It\'s nice to talk to you directly.')
