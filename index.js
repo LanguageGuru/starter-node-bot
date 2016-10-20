@@ -39,7 +39,7 @@ controller.hears('Test', ['mention'], function (bot, message)
 		   ([
 		        function setAuth(step) {
 		     		 var creds_json = {
-      client_email: 'vjqatesting@google.com',
+      client_email: 'vjqatesting@gmail.com',
       private_key: 'AIzaSyAHnC2J-ChrpQ7iCDEgktI1xozaZ6V74SE'
     }
 console.log("starting async login");
