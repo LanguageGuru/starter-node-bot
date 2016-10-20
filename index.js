@@ -54,14 +54,14 @@ controller.hears('Test', ['mention'], function (bot, message)
 		      //console.log('Loaded doc: '+info.title+' by '+info.author.email);
 		      bot.reply(message, 'Loaded doc: '+info.title+' by '+info.author.email)
 		      sheet = info.worksheets[0];
-		      console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
+		      //console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
 			bot.reply(message, 'sheet 1: '+sheet.title)
 
-			sheet = doc.$worksheets()['$[]'](0);
- 			sheet.['$[]='](2, 1, "=gTranslate(text, from, to)");
-  			sheet.$save();
-  			sheet.$reload();
-  			bot.reply(message, self.$puts(sheet['$[]'](self.$i(), 1))
+			//sheet = doc.$worksheets()['$[]'](0);
+ 			//sheet.['$[]='](2, 1, "=gTranslate(text, from, to)");
+  			//sheet.$save();
+  			//sheet.$reload();
+  			//bot.reply(message, self.$puts(sheet['$[]'](self.$i(), 1))
 				  
 		      step();
 		    })}
