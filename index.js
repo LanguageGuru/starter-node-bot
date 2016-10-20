@@ -42,7 +42,7 @@ controller.hears('Test', ['mention'], function (bot, message)
       client_email: 'vjqatesting@google.com',
       //private_key: 'your long private key stuff here'
     }
-
+console.log("starting async login");
 			doc.useServiceAccountAuth(creds_json, step);
 			     },
 		  function getInfoAndWorksheets(step) {
