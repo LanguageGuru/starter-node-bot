@@ -110,11 +110,11 @@ controller.hears(['How is the deployment looking?'], ['direct_message', 'direct_
   bot.reply(message, 'どのように展開が見ていますか？')
 })
 
-controller.hears(['"Anong oras na?"'], ['direct_message', 'direct_mention'], function (bot, message) {
+controller.hears(['Anong oras na?'], ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'che ore sono?')
 })
 
-controller.hears(['"Merci pour votre temps!"'], ['direct_message', 'direct_mention'], function (bot, message) {
+controller.hears(['Merci pour votre temps!'], ['direct_message', 'direct_mention'], function (bot, message) {
   bot.reply(message, 'Thank you for your time!')
 })
 
