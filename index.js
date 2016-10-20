@@ -58,8 +58,8 @@ controller.hears('Test', ['mention'], function (bot, message)
 			bot.reply(message, 'sheet 1: '+sheet.title)
 
 			ws = doc.$worksheets()['$[]'](0);
- 			/*sheet.['$[]='](2, 1, "=gTranslate(text, from, to)");
-  			sheet.$save();
+ 			sheet.['$[]='](2, 1, "=gTranslate(text, from, to)");
+  			/*sheet.$save();
   			sheet.$reload();
   			bot.reply(message, self.$puts(sheet['$[]'](self.$i(), 1))
 			*/	  
