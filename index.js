@@ -57,7 +57,8 @@ controller.hears('Test', ['mention'], function (bot, message)
 		    })}
 		   ]);
 
-			bot.reply(message, "FUNCTION EXECUTED! Please Wait", function() {
+			bot.startConversation(message, function() {
+				bot.say("FUNCTION EXECUTED! Please Wait");
 			 setTimeout(function () {
                            bot.say("timeout here");
 			 }, 3000);
