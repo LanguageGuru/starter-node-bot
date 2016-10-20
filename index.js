@@ -28,21 +28,30 @@ if (token) {
   require('beepboop-botkit').start(controller, { debug: true })
 }
 
-controller.hears('Test', ['mention'], function (bot, message) {
-var GoogleSpreadsheet = require('google-spreadsheet');
-var async = require('async');
-	
-var doc = new GoogleSpreadsheet('1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew');
-var sheet;
-	
-async.series([
-  function setAuth(step) {
-    // see notes below for authentication instructions! 
-    var creds = require('./google-generated-creds.json');
-    }	
-	]);
-	bot.reply(message, "FUNCTION EXECUTED!")
-})
+controller.hears('Test', ['mention'], function (bot, message) 
+		{
+		   var GoogleSpreadsheet = require('google-spreadsheet');
+		   var async = require('async');	
+		   var doc = new GoogleSpreadsheet('1JjDynxgjDGTybyEk09TMFmZyqMKqkNdrSl1fRQdrpew');
+		   var sheet;
+			
+		   async.series
+		   ([
+		        function setAuth(step) {
+		     		var creds = require('./google-generated-creds.json');
+
+			doc.useServiceAccountAuth(creds, step);
+			     },
+		  function getInfoAndWorksheets(step) {
+		    doc.getInfo(function(err, info) {
+		      console.log('Loaded doc: '+info.title+' by '+info.author.email);
+		      sheet = info.worksheets[0];
+		      console.log('sheet 1: '+sheet.title+' '+sheet.rowCount+'x'+sheet.colCount);
+		      step();
+		    })}
+		   ]);
+			bot.reply(message, "FUNCTION EXECUTED!")
+		})
 
 controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
